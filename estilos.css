@@ -1,0 +1,216 @@
+/* Paleta de colores: Morado lindo y elegante */
+:root {
+    --morado-claro: #E0BBE4; /* Fondo Suave */
+    --morado-intermedio: #957DAD; /* Morado Profundo */
+    --purpura-intenso: #D291BC; /* Acentos Vibrantes */
+    --fondo-tarjeta: #FFFFFF;
+}
+
+body {
+    background-color: var(--morado-claro); 
+    color: var(--morado-intermedio);
+    font-family: 'Georgia', serif; 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.6;
+}
+
+main {
+    padding: 20px;
+}
+
+/* BANNER PRINCIPAL con efecto */
+.banner-principal {
+    background-color: var(--purpura-intenso);
+    color: white;
+    padding: 40px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-principal h1 {
+    font-size: 3em;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+/* ANIMACIÓN: Corazón Flotante en el Banner */
+.corazon-animado {
+    font-size: 3.5em;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    animation: latido 1.5s infinite; 
+    color: #FFC0CB; 
+}
+
+@keyframes latido {
+    0% { transform: scale(1) translateY(-50%); }
+    50% { transform: scale(1.2) translateY(-50%); } 
+    100% { transform: scale(1) translateY(-50%); }
+}
+
+/* --- ESTILOS GENERALES DE TARJETA --- */
+.contenedor-tarjeta {
+    background-color: var(--fondo-tarjeta);
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.contenedor-tarjeta:hover {
+    transform: translateY(-5px); 
+}
+
+/* --- ESTILO DE LA CARTA GRANDE --- */
+.contenedor-carta {
+    background-color: var(--morado-intermedio); 
+    color: white;
+    margin: 40px auto;
+    padding: 50px 30px;
+    border-radius: 20px;
+    max-width: 800px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    transition: background-color 0.5s;
+}
+
+.titulo-carta {
+    text-align: center;
+    color: var(--morado-claro);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--morado-claro);
+    padding-bottom: 10px;
+}
+
+.texto-carta p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+.saludo, .firma {
+    font-style: italic;
+    text-align: right;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* --- ESTILO DEL CONTADOR --- */
+.contador-numeros {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--purpura-intenso);
+    margin: 15px 0;
+}
+.contador-numeros .numero {
+    display: inline-block;
+    min-width: 40px;
+    padding: 5px;
+    background-color: var(--morado-claro);
+    border-radius: 8px;
+    color: var(--morado-intermedio);
+    margin: 0 5px;
+}
+
+/* --- ESTILO DE BOTONES Y ELOGIOS --- */
+.boton-efecto {
+    background-color: var(--purpura-intenso);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.boton-efecto:hover {
+    background-color: var(--morado-intermedio);
+    transform: scale(1.05); 
+}
+
+.frase-elogio {
+    font-size: 1.3em;
+    font-style: italic;
+    min-height: 40px; 
+    transition: opacity 0.5s; 
+}
+
+/* --- ESTILO DE LA TRIVIA (TARJETAS) --- */
+.banner-galeria {
+    background-color: var(--morado-intermedio);
+    color: var(--morado-claro);
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+.grid-tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.tarjeta-recuerdo {
+    width: 250px;
+    height: 150px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.frente, .detras {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.frente {
+    background-color: var(--purpura-intenso);
+    color: white;
+    transform: rotateY(0deg);
+}
+
+.detras {
+    background-color: #FFC0CB; 
+    color: var(--morado-intermedio);
+    transform: rotateY(180deg);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Clase para voltear, añadida por jQuery */
+.volteada .frente {
+    transform: rotateY(-180deg);
+}
+
+.volteada .detras {
+    transform: rotateY(0deg);
+}
+
+footer {
+    background-color: var(--purpura-intenso);
+    color: white;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
