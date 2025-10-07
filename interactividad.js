@@ -6,7 +6,7 @@ $(document).ready(function() {
     // ===============================================
 
     // FECHA ACTUALIZADA AL 6 DE MARZO DE 2025:
-    const fechaInicio = new Date('March 6, 2025 00:00:00').getTime(); 
+    const fechaInicio = new Date('April 6, 2025 00:00:00').getTime(); 
     
     const $contadorElemento = $('#tiempo-juntos');
 
@@ -83,5 +83,6 @@ $(document).ready(function() {
         // Uso de .toggleClass() de jQuery para añadir/quitar la clase 'volteada'
         $(this).toggleClass('volteada');
     });
+
 
 });
